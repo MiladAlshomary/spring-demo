@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>USERS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div class="" th:unless="${#lists.isEmpty(allUsers)}">
+    
+    <h2>ALL USERS</h2>
+    
+      <table>
+        <tbody>
+          <tr th:each="row: ${allUsers}">
+            <td th:text="${{row.firstName}}">name</td>
+            <td><a th:href="@{/user(id=${{row.id}})}">_link_</a></td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</body>
+</html>
